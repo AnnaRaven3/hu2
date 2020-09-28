@@ -30,6 +30,11 @@ public class HalloJavamitForEach {
             list.add("1." + i);
         }
         
+        for (String string : list) {
+            System.out.println(list.get(list.indexOf(string)));
+        }
+        
+        
     }
     
 }
