@@ -28,29 +28,19 @@ public class NumberTester {
     public static void main(String[] args) {
         NumberTester nt = new NumberTester("datei.txt");
         nt.testFile();
+        
+        String[] text = nt.lines.clone();
+        
+        nt.oddTester = (int n) -> {
+            return n % 2 == 0;
+        };
     }
     
     public NumberTester(String fileName){
         file = new File(fileName);
-        }
-        
-    public void setOddEvenTester(NumberTest oddTester){
-        this.oddTester = oddTester;
-    }
-    
-    public void setPrimeTester(NumberTest primeTester){
-        this.primeTester = primeTester;
-    }
-    
-    public void setPalindromeTester(NumberTest palidromeTester){
-        this.palidromeTester = palidromeTester;
-    }
-    
-    public void testFile(){
         
         try {
            BufferedReader br = new BufferedReader(new FileReader(file));
-        
         
         String line = br.readLine();
         lines = new String[Integer.parseInt(line)];
@@ -66,6 +56,25 @@ public class NumberTester {
         } catch (IOException ex) {
             Logger.getLogger(NumberTester.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+
+
+        
+        }
+        
+    public void setOddEvenTester(NumberTest oddTester){
+        this.oddTester = oddTester;
+    }
+    
+    public void setPrimeTester(NumberTest primeTester){
+        this.primeTester = primeTester;
+    }
+    
+    public void setPalindromeTester(NumberTest palidromeTester){
+        this.palidromeTester = palidromeTester;
+    }
+    
+    public void testFile(){
         
     }
     
