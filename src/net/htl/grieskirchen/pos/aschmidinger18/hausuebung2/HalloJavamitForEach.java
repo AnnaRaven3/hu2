@@ -37,7 +37,8 @@ public class HalloJavamitForEach {
         System.out.println("");
         list.forEach((String s) -> System.out.println(s));
         
-        
+        System.out.println("sout");
+        list.forEach(System.out::print);
     }
     
 }
