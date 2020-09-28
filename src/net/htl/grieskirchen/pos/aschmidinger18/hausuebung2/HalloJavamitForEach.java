@@ -5,17 +5,31 @@
  */
 package net.htl.grieskirchen.pos.aschmidinger18.hausuebung2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author annas
  */
-public class EratosthenesPrimeSieve {
+public class HalloJavamitForEach {
 
     /**
      * @param args the command line arguments
      */
+    
+    List<String> list = new ArrayList<>();
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        HalloJavamitForEach hallo = new HalloJavamitForEach();
+        hallo.print();
+    }
+    
+    public void print(){
+        for (int i = 0; i < 10; i++) {
+            list.add("1." + i);
+        }
+        
     }
     
 }
