@@ -12,6 +12,24 @@ package net.htl.grieskirchen.pos.aschmidinger18.hausuebung2;
 public class Main {
     
     public static void main(String[] args) {
-        
+        NumberTester nt = new NumberTester("datei.txt");
+
+        nt.setOddEvenTester((p) -> p % 2 == 0);
+        nt.setPrimeTester((p) -> {
+            if (p <= 1) {
+                return false;
+            }
+            if (p == 2) {
+                return true;
+            }
+
+            for (int i = 2; i < p; i++) {
+
+                if (p % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        });
     }
 }
