@@ -25,16 +25,7 @@ public class NumberTester {
     private File file;
     private String[] lines;
     
-    public static void main(String[] args) {
-        NumberTester nt = new NumberTester("datei.txt");
-        nt.testFile();
-        
-        String[] text = nt.lines.clone();
-        
-        nt.oddTester = (int n) -> {
-            return n % 2 == 0;
-        };
-    }
+    
     
     public NumberTester(String fileName){
         file = new File(fileName);
@@ -74,9 +65,45 @@ public class NumberTester {
         this.palidromeTester = palidromeTester;
     }
     
-    public void testFile(){
+    public void testFile() {
         
-    }
+            switch (Integer.parseInt(lines[0])) {
+                case 1:
+
+                    boolean ergebnis = oddTester.testNumber(Integer.parseInt(lines[1]));
+                    if (ergebnis) {
+                        System.out.println("EVEN");
+                    } else {
+                        System.out.println("ODD");
+                    }
+                    break;
+
+                case 2:
+
+                    boolean ergebnis2 = primeTester.testNumber(Integer.parseInt(lines[1]));
+                    if (ergebnis2) {
+                        System.out.println("PRIME");
+                    } else {
+                        System.out.println("NO PRIME");
+                    }
+                    break;
+
+                case 3:
+
+                    boolean ergebnis3 = palidromeTester.testNumber(Integer.parseInt(lines[1]));
+                    if (ergebnis3) {
+                        System.out.println("PALINDROME");
+                    } else {
+                        System.out.println("NO PALINDROME");
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+    
     
     public interface NumberTest{
         boolean testNumber(int number);
