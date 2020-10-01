@@ -9,8 +9,7 @@ package net.htl.grieskirchen.pos.aschmidinger18.hausuebung2;
  *
  * @author annas
  */
-public interface CalculateOperation {
+public interface NumberTest {
     
-    Number calc (Number x , Number y ) ;
-    
+    boolean testNumber ( int number ) ;
 }
